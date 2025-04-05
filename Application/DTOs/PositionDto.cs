@@ -1,4 +1,5 @@
-﻿namespace Application.DTOs;
+﻿namespace ApplyBuddy.Application.DTOs;
 public class PositionDto
 {
+
 }

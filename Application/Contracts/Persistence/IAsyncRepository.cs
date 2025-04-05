@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Contracts.Persistence;
+namespace ApplyBuddy.Application.Contracts.Persistence;
 public interface IAsyncRepository<T> where T : class
 {
     Task<T> GetByIdAsync<TId>(TId id);

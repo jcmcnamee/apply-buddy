@@ -1,4 +1,4 @@
-﻿namespace Domain.Common;
+﻿namespace ApplyBuddy.Domain.Common;
 public abstract class AuditableEntity
 {
     public string? CreatedBy { get; set; }

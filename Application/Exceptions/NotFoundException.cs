@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Exceptions;
+namespace ApplyBuddy.Application.Exceptions;
 public class NotFoundException
 {
 }

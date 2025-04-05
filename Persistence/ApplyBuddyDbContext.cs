@@ -1,9 +1,9 @@
-﻿using Domain.Common;
-using Domain.Entities;
+﻿using ApplyBuddy.Domain.Common;
+using ApplyBuddy.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Persistence;
+namespace ApplyBuddy.Persistence;
 
 public class ApplyBuddyDbContext : DbContext
 {
@@ -12,8 +12,8 @@ public class ApplyBuddyDbContext : DbContext
     {
     }
 
-    public DbSet<JobApplication> Events { get; set; }
-    public DbSet<Position> Categories { get; set; }
+    public DbSet<JobApplication> Applications { get; set; }
+    public DbSet<Position> Positions { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -30,6 +30,7 @@ public class ApplyBuddyDbContext : DbContext
         //    CategoryId = concertGuid,
         //    Name = "Concerts"
         //});
+     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {

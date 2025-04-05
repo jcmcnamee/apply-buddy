@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Interfaces;
+namespace ApplyBuddy.Domain.Interfaces;
 public interface IAggregateRoot
 {
     // Marker interface

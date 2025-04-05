@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entities;
+namespace ApplyBuddy.Domain.Entities;
 public class JobApplication
 {
     public Guid Id { get; set; }
@@ -12,6 +12,7 @@ public class JobApplication
     public required Position Position { get; set; }
     public ApplicationStatus Status { get; set; }
     public Recruiter? Recruter { get; set; }
+    public DateTime? AppliedDate { get; set; }
 }
 
 public class Recruiter

@@ -1,16 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ApplyBuddy.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Persistence.Configuration;
-public class JobApplicationConfiguration : IEntityTypeConfiguration<JobApplicationConfiguration>
+namespace ApplyBuddy.Persistence.Configuration;
+public class JobApplicationConfiguration : IEntityTypeConfiguration<JobApplication>
 {
-    public void Configure(EntityTypeBuilder<JobApplicationConfiguration> builder)
+    public void Configure(EntityTypeBuilder<JobApplication> builder)
     {
-        throw new NotImplementedException();
+        builder.Property(j => j.Name)
+            .IsRequired()
+            .HasMaxLength(50);
+
     }
 }
