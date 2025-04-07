@@ -1,4 +1,4 @@
-﻿using ApplyBuddy.Domain.Entities;
+﻿using ApplyBuddy.Domain.Aggregates.JobApplication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

@@ -1,12 +1,8 @@
-﻿using Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ApplyBuddy.Domain.Common;
+using ApplyBuddy.Domain.Interfaces;
 
-namespace ApplyBuddy.Domain.Entities;
-public class Position : AuditableEntity
+namespace ApplyBuddy.Domain.Aggregates.Position;
+public class Position : AuditableEntity, IAggregateRoot
 {
     public Guid Id { get; set; }
     public string Name { get; set; } = string.Empty;
@@ -15,4 +11,7 @@ public class Position : AuditableEntity
     public DateTime ListedDate { get; set; }
     public DateTime EndDate { get; set; }
     public string Company { get; set; } = string.Empty;
+    public Salary Salary { get; set; }
+    public EmploymentType EmploymentType { get; set; }
+    public PositionLevel Level { get; set; }
 }

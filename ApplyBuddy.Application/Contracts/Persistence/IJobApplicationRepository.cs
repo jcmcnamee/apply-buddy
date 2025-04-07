@@ -1,4 +1,4 @@
-﻿using ApplyBuddy.Domain.Entities;
+﻿using ApplyBuddy.Domain.Aggregates.JobApplication;
 
 namespace ApplyBuddy.Application.Contracts.Persistence;
 

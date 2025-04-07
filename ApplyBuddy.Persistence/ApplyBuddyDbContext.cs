@@ -1,5 +1,6 @@
-﻿using ApplyBuddy.Domain.Common;
-using ApplyBuddy.Domain.Entities;
+﻿using ApplyBuddy.Domain.Aggregates.JobApplication;
+using ApplyBuddy.Domain.Aggregates.Position;
+using ApplyBuddy.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -12,8 +13,8 @@ public class ApplyBuddyDbContext : DbContext
     {
     }
 
-    public DbSet<JobApplication> Applications { get; set; }
-    public DbSet<Position> Positions { get; set; }
+    public DbSet<JobApplication> Applications => Set<JobApplication>();
+    public DbSet<Position> Positions => Set<Position>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -49,4 +50,4 @@ public class ApplyBuddyDbContext : DbContext
         return base.SaveChangesAsync(cancellationToken);
     }
 }
-}
+
