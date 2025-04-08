@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace ApplyBuddy.Application.Utilities;
 
-public class Mapper<TSource, TDestination>
+public class Mapper //: IMapper<TSource, TDestination>
 {
-    // Create destination obj
-    TDestination destination = Activator.CreateInstance<TDestination>();
 
     // Loop through source and match properties
-    public TDestination Map(TSource source)
+    public TDestination Map<TDestination>(object source)
     {
-        foreach (var sourceProperty in typeof(TSource).GetProperties())
+        TDestination destination = Activator.CreateInstance<TDestination>();
+
+
+        foreach (var sourceProperty in source.GetType().GetProperties())
         {
             var destinationProperty = typeof(TDestination).GetProperty(sourceProperty.Name);
 

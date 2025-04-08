@@ -8,6 +8,20 @@
 
   <ItemGroup>
     <Compile Remove="Extensions\JobApplicationExtensions.cs" />
+    <Compile Remove="Features\JobApplications\Commands\ICreateJobApplicationCommand.cs" />
+    <Compile Remove="Services\IMediator.cs" />
+    <Compile Remove="Services\IRequest.cs" />
+    <Compile Remove="Services\IRequestHandler.cs" />
+    <Compile Remove="Services\Mediator.cs" />
+    <Compile Remove="Utilities\IMapper.cs" />
+    <Compile Remove="Utilities\Mapper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="MediatR" Version="12.5.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,7 +29,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions\" />
+    <Folder Include="Features\Tasks\Commands\Delete\" />
+    <Folder Include="Features\Tasks\Commands\Update\" />
+    <Folder Include="Features\Tasks\Queries\GetTask\" />
+    <Folder Include="Features\Tasks\Queries\GetTaskList\" />
+    <Folder Include="Services\" />
+    <Folder Include="Utilities\" />
   </ItemGroup>
 
 </Project>

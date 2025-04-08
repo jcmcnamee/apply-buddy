@@ -19,4 +19,6 @@ internal class JobApplicationRepository : BaseRepository<JobApplication>, IJobAp
         var matches = _dbContext.Applications.Any(a => a.Name.Equals(name) && a.AppliedDate.Equals(appliedDate));
         return Task.FromResult(matches);
     }
+
+    public async Task<List<JobApplication>> GetApplicationsWithRecruiters
 }

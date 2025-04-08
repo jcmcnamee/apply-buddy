@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplyBuddy.Application.DTOs.JobApplication;
+namespace ApplyBuddy.Application.DTOs.JobApplications;
 public class JobApplicationDto
 {
     public Guid Id { get; set; }

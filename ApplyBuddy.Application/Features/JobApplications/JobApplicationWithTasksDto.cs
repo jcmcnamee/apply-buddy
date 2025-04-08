@@ -6,8 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplyBuddy.Application.DTOs.JobApplication;
+namespace ApplyBuddy.Application.DTOs.JobApplications;
 public class JobApplicationWithTasksDto : JobApplicationDto
 {
-    public List<ApplicationTask> Tasks { get; set; } = new List<ApplicationTask>();
+    public List<Domain.Aggregates.JobApplication.UserTask> Tasks { get; set; } = new List<Domain.Aggregates.JobApplication.UserTask>();
 }
