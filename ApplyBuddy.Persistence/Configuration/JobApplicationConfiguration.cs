@@ -11,5 +11,23 @@ public class JobApplicationConfiguration : IEntityTypeConfiguration<JobApplicati
             .IsRequired()
             .HasMaxLength(50);
 
+        builder.Property(j => j.AppliedDate)
+            .HasConversion(
+                d => d.Value.ToUniversalTime(),
+                d => d.ToUniversalTime()
+                );
+
+        builder.Property(j => j.CreatedDate)
+            .HasConversion(
+                d => d.ToUniversalTime(),
+                d => d.ToUniversalTime()
+                );
+        
+        builder.Property(j => j.LastModifiedDate)
+            .HasConversion(
+                d => d.Value.ToUniversalTime(),
+                d => d.ToUniversalTime()
+                );
+
     }
 }

@@ -20,5 +20,5 @@ internal class JobApplicationRepository : BaseRepository<JobApplication>, IJobAp
         return Task.FromResult(matches);
     }
 
-    public async Task<List<JobApplication>> GetApplicationsWithRecruiters
+    // public async Task<List<JobApplication>> GetApplicationsWithRecruiters
 }

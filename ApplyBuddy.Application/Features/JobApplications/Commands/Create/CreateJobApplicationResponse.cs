@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ApplyBuddy.Application.Features.JobApplications.Commands.Create;
-internal class CreateJobApplicationResponse : BaseResponse
+public class CreateJobApplicationResponse : BaseResponse
 {
     public CreateJobApplicationResponse() : base()
     {

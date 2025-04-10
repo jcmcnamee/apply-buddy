@@ -1,40 +1,46 @@
 ﻿using ApplyBuddy.Application.Contracts.Persistence;
-using ApplyBuddy.Application.Exceptions;
 using ApplyBuddy.Domain.Aggregates.JobApplication;
 using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ApplyBuddy.Application.Features.JobApplications.Commands.Create;
-public class CreateJobApplicationHandler : IRequestHandler<CreateJobApplicationCommand, Guid>
+public class CreateJobApplicationHandler : IRequestHandler<CreateJobApplicationCommand, CreateJobApplicationResponse>
 {
     private readonly IMapper _mapper;
-    private readonly IAsyncRepository<JobApplication> _applicationRepository;
+    private readonly IJobApplicationRepository _applicationRepository;
 
-    public CreateJobApplicationHandler(IMapper mapper, IAsyncRepository<JobApplication> applicationRepository)
+    public CreateJobApplicationHandler(IMapper mapper, IJobApplicationRepository applicationRepository)
     {
         _mapper = mapper;
         _applicationRepository = applicationRepository;
     }
 
-    public async Task<Guid> Handle(CreateJobApplicationCommand request, CancellationToken cancellationToken)
+    public async Task<CreateJobApplicationResponse> Handle(CreateJobApplicationCommand request, CancellationToken cancellationToken)
     {
-        var application = _mapper.Map<JobApplication>(request);
+        var response = new CreateJobApplicationResponse();
+        var validator = new CreateJobApplicationValidator(_applicationRepository);
 
-        var validator = new CreateJobApplicationValidator();
         var validationResult = await validator.ValidateAsync(request);
 
         if (validationResult.Errors.Count > 0)
-            throw new ValidationException(validationResult);
+        {
+            response.Success = false;
+            response.ValidationErrors = new List<string>();
 
+            foreach (var error in validationResult.Errors)
+            {
+                response.ValidationErrors.Add(error.ErrorMessage);
+            }
+        }
 
-        application = await _applicationRepository.AddAsync(application);
+        if (response.Success)
+        {
+            var application = _mapper.Map<JobApplication>(request);
+            application = await _applicationRepository.AddAsync(application);
+            response.JobApplication = _mapper.Map<CreateJobApplicationResponseDto>(application);
+        }
 
-        return application.Id;
+        return response;
 
     }
 }

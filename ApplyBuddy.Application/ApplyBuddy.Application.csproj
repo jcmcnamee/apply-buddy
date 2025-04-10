@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Remove="Extensions\JobApplicationExtensions.cs" />
+    <Compile Remove="Extensions\ServiceCollectionExtensions.cs" />
     <Compile Remove="Features\JobApplications\Commands\ICreateJobApplicationCommand.cs" />
     <Compile Remove="Services\IMediator.cs" />
     <Compile Remove="Services\IRequest.cs" />
@@ -29,10 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Tasks\Commands\Delete\" />
-    <Folder Include="Features\Tasks\Commands\Update\" />
-    <Folder Include="Features\Tasks\Queries\GetTask\" />
-    <Folder Include="Features\Tasks\Queries\GetTaskList\" />
+    <Folder Include="Contracts\ApplicationServices\" />
+    <Folder Include="Extensions\" />
     <Folder Include="Services\" />
     <Folder Include="Utilities\" />
   </ItemGroup>

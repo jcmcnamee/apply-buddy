@@ -23,6 +23,12 @@ public class DeleteJobApplicationHandler : IRequestHandler<DeleteJobApplicationC
     public async Task Handle(DeleteJobApplicationCommand request, CancellationToken cancellationToken)
     {
         var applicationToDelete = await _applicationRepository.GetByIdAsync(request.Id);
+
+        if (applicationToDelete == null)
+        {
+            // TODO: Implement custom not found exception
+        }
+
         await _applicationRepository.DeleteAsync(applicationToDelete);
 
     }

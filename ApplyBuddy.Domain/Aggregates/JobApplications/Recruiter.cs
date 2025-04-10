@@ -9,6 +9,7 @@ public record Recruiter
     public string? Agency { get; init; } = string.Empty;
     public string? LinkedInProfile { get; init; } = string.Empty;
 
+    private Recruiter() { }
     public Recruiter(string name, PersonTitle? title, string? phoneNumber, string? agency, string linkedIn)
     {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Invalid name string given.");

@@ -21,6 +21,12 @@ public class GetJobApplicationDetailHandler : IRequestHandler<GetJobApplicationD
     public async Task<JobApplicationDetailVm> Handle(GetJobApplicationDetailQuery request, CancellationToken cancellationToken)
     {
         var application = await _applicationRepository.GetByIdAsync(request.Id);
+
+        if(application == null)
+        {
+            // TODO: Implement Not Found Exception
+        }
+
         var applicationVm = _mapper.Map<JobApplicationDetailVm>(application);
 
         var position = await _positionRepository.GetByIdAsync(application.Position);

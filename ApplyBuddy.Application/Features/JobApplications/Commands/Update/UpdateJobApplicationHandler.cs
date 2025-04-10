@@ -2,11 +2,6 @@
 using ApplyBuddy.Domain.Aggregates.JobApplication;
 using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ApplyBuddy.Application.Features.JobApplications.Commands.Update;
 public class UpdateJobApplicationHandler : IRequestHandler<UpdateJobApplicationCommand>
@@ -23,6 +18,11 @@ public class UpdateJobApplicationHandler : IRequestHandler<UpdateJobApplicationC
     public async Task Handle(UpdateJobApplicationCommand request, CancellationToken cancellationToken)
     {
         var applicationToUpdate = await _applicationRepository.GetByIdAsync(request.Id);
+
+        if (applicationToUpdate == null)
+        {
+            // TODO: Implement custom not found exception
+        }
 
         _mapper.Map(request, applicationToUpdate, typeof(UpdateJobApplicationCommand), typeof(JobApplication));
 

@@ -10,13 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ApplyBuddy.Persistence;
-public class PersistenceServiceRegistration
+public static class PersistenceServiceRegistration
 {
-    public IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<EdiplanDbContext>(options =>
+        services.AddDbContext<ApplyBuddyDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString
-                ("EdiplanDotnetAPIConnectionString"))
+                ("ApplyBuddyConnectionString"))
             .EnableSensitiveDataLogging()
             .EnableDetailedErrors());
 
@@ -25,7 +25,7 @@ public class PersistenceServiceRegistration
         services.AddScoped<IJobApplicationRepository, JobApplicationRepository>();
         services.AddScoped<IPositionRepository, PositionRepository>();
         services.AddScoped<IRecruiterRepository, RecruiterRepository>();
-        services.AddScoped<IApplicationTaskRepository, UserTaskRepository>();
+        services.AddScoped<IUserTaskRepository, UserTaskRepository>();
 
 
         return services;

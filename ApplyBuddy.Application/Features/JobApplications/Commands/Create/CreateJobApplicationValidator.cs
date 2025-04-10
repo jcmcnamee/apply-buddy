@@ -1,10 +1,5 @@
 ﻿using ApplyBuddy.Application.Contracts.Persistence;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ApplyBuddy.Application.Features.JobApplications.Commands.Create;
 public class CreateJobApplicationValidator : AbstractValidator<CreateJobApplicationCommand>
@@ -13,6 +8,8 @@ public class CreateJobApplicationValidator : AbstractValidator<CreateJobApplicat
 
     public CreateJobApplicationValidator(IJobApplicationRepository applicationRepository)
     {
+        _applicationRepository = applicationRepository;
+
         RuleFor(a => a.Name)
             .NotEmpty().WithMessage("{PropertyName} is required.")
             .NotNull()
@@ -23,7 +20,7 @@ public class CreateJobApplicationValidator : AbstractValidator<CreateJobApplicat
 
         RuleFor(a => a.AppliedDate)
             .GreaterThan(DateTime.Now).WithMessage("{PropertyName} cannot be in the future.");
-        _applicationRepository = applicationRepository;
+
     }
 
     private async Task<bool> ApplicationNameAndDateUnique(CreateJobApplicationCommand application, CancellationToken cancellationToken)

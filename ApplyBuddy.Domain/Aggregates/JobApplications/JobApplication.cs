@@ -8,7 +8,7 @@ public class JobApplication : AuditableEntity, IAggregateRoot
     public string Name { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public Recruiter? Recruiter { get; set; }
-    public ApplicationStatus Status { get; private set; }
+    public ApplicationStatus Status { get; private set; } = ApplicationStatus.NotApplied;
     public DateTime? AppliedDate { get; private set; }
     public List<UserTask> Tasks { get; private set; } = new List<UserTask>();
     public required Guid Position { get; set; }

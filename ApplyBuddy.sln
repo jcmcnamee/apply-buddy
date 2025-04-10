@@ -3,15 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplyBuddy.Server", "ApplyBuddy.Server\ApplyBuddy.Server.csproj", "{D2D767EA-D71C-4845-9919-59347957EECC}"
-EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "applybuddy.client", "applybuddy.client\applybuddy.client.esproj", "{1B63BF7D-1A5A-44B3-9057-6BCCF89F39AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0ACAC17C-F7C4-480A-A606-364D3FFFDC54}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B818A1D6-489D-4DD9-86B3-64053FC1D168}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "old", "old", "{9CA4B623-454D-43E5-89C7-72D590AA9544}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{58640E6B-67AB-4544-B44E-A4C466A31CD2}"
 EndProject
@@ -25,16 +21,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplyBuddy.Domain", "ApplyB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplyBuddy.Persistence", "ApplyBuddy.Persistence\ApplyBuddy.Persistence.csproj", "{242E9142-3C68-45BA-AF67-95147011E2C2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CBD5C716-4266-4191-8982-5114A846C030}"
+	ProjectSection(SolutionItems) = preProject
+		Graph1.dgml = Graph1.dgml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplyBuddy.Api", "ApplyBuddy.Api\ApplyBuddy.Api.csproj", "{702DE8A0-A621-4255-ACA7-30392CE15306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplyBuddy.Infrastructure", "ApplyBuddy.Infrastructure\ApplyBuddy.Infrastructure.csproj", "{01A582BB-95CD-4679-B6DA-8D57B32698FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D2D767EA-D71C-4845-9919-59347957EECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2D767EA-D71C-4845-9919-59347957EECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2D767EA-D71C-4845-9919-59347957EECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2D767EA-D71C-4845-9919-59347957EECC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1B63BF7D-1A5A-44B3-9057-6BCCF89F39AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1B63BF7D-1A5A-44B3-9057-6BCCF89F39AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B63BF7D-1A5A-44B3-9057-6BCCF89F39AC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
@@ -53,12 +54,19 @@ Global
 		{242E9142-3C68-45BA-AF67-95147011E2C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{242E9142-3C68-45BA-AF67-95147011E2C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{242E9142-3C68-45BA-AF67-95147011E2C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{702DE8A0-A621-4255-ACA7-30392CE15306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{702DE8A0-A621-4255-ACA7-30392CE15306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{702DE8A0-A621-4255-ACA7-30392CE15306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{702DE8A0-A621-4255-ACA7-30392CE15306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A582BB-95CD-4679-B6DA-8D57B32698FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A582BB-95CD-4679-B6DA-8D57B32698FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A582BB-95CD-4679-B6DA-8D57B32698FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A582BB-95CD-4679-B6DA-8D57B32698FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D2D767EA-D71C-4845-9919-59347957EECC} = {9CA4B623-454D-43E5-89C7-72D590AA9544}
 		{1B63BF7D-1A5A-44B3-9057-6BCCF89F39AC} = {0ACAC17C-F7C4-480A-A606-364D3FFFDC54}
 		{58640E6B-67AB-4544-B44E-A4C466A31CD2} = {0ACAC17C-F7C4-480A-A606-364D3FFFDC54}
 		{2FF5B7A2-8241-4CBE-AB0C-C3E3E2BACEC8} = {0ACAC17C-F7C4-480A-A606-364D3FFFDC54}
@@ -66,5 +74,7 @@ Global
 		{F3F88EAD-E935-48CC-A237-8DD4595001FE} = {2FF5B7A2-8241-4CBE-AB0C-C3E3E2BACEC8}
 		{58078CC1-5E4B-4485-AD7B-D9DE25253FBA} = {2FF5B7A2-8241-4CBE-AB0C-C3E3E2BACEC8}
 		{242E9142-3C68-45BA-AF67-95147011E2C2} = {E178F924-EE17-459D-B9CE-B70B6927BEE4}
+		{702DE8A0-A621-4255-ACA7-30392CE15306} = {58640E6B-67AB-4544-B44E-A4C466A31CD2}
+		{01A582BB-95CD-4679-B6DA-8D57B32698FD} = {E178F924-EE17-459D-B9CE-B70B6927BEE4}
 	EndGlobalSection
 EndGlobal
