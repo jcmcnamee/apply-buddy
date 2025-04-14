@@ -1,4 +1,5 @@
 ﻿using ApplyBuddy.Domain.Aggregates.JobApplication;
+using ApplyBuddy.Domain.Aggregates.Position;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -28,6 +29,11 @@ public class JobApplicationConfiguration : IEntityTypeConfiguration<JobApplicati
                 d => d.Value.ToUniversalTime(),
                 d => d.ToUniversalTime()
                 );
+
+        builder.HasOne<Position>()
+            .WithOne()
+            .HasForeignKey<JobApplication>(j => j.PositionId)
+            .IsRequired();
 
     }
 }

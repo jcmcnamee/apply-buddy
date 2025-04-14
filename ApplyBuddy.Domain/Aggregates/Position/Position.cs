@@ -1,4 +1,5 @@
-﻿using ApplyBuddy.Domain.Common;
+﻿using ApplyBuddy.Domain.Aggregates.JobApplication;
+using ApplyBuddy.Domain.Common;
 using ApplyBuddy.Domain.Interfaces;
 
 namespace ApplyBuddy.Domain.Aggregates.Position;

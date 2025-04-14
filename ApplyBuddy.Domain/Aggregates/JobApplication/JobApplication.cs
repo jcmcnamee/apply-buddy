@@ -11,7 +11,7 @@ public class JobApplication : AuditableEntity, IAggregateRoot
     public ApplicationStatus Status { get; private set; } = ApplicationStatus.NotApplied;
     public DateTime? AppliedDate { get; private set; }
     public List<UserTask> Tasks { get; private set; } = new List<UserTask>();
-    public required Guid Position { get; set; }
+    public required Guid PositionId { get; set; }
 
     public int? DaysSinceApplication()
     {

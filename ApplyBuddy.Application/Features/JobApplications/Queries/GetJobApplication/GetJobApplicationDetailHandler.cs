@@ -29,7 +29,7 @@ public class GetJobApplicationDetailHandler : IRequestHandler<GetJobApplicationD
 
         var applicationVm = _mapper.Map<JobApplicationDetailVm>(application);
 
-        var position = await _positionRepository.GetByIdAsync(application.Position);
+        var position = await _positionRepository.GetByIdAsync(application.PositionId);
         applicationVm.Position = _mapper.Map<PositionDto>(position);
 
         return applicationVm;

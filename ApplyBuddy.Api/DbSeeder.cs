@@ -35,7 +35,7 @@ public static class DbSeeder
                 Id = Guid.Parse("aef4aa75-5e42-44f0-abc2-b72a7c384c5c"),
                 Name = "Resolver associate developer",
                 Description = "Entry level, required C# and JavaScript",
-                Position = Guid.Parse("7b439417-169b-4382-b8cd-1755d2b55183")
+                PositionId = Guid.Parse("7b439417-169b-4382-b8cd-1755d2b55183")
             });
         }
 
