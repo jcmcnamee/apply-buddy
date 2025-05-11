@@ -9,7 +9,7 @@ namespace ApplyBuddy.Application.Features.DTOs;
 public class TaskListDto
 {
     public Guid Id { get; init; }
-    public string ShortDescription { get; set; } = string.Empty;
-    public TaskState State { get; private set; }
+    public string ShortDescription { get; init; } = string.Empty;
+    public TaskState State { get; init; }
 
 }

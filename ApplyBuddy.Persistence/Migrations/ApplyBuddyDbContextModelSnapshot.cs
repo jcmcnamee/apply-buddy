@@ -53,7 +53,7 @@ namespace ApplyBuddy.Persistence.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<Guid>("Position")
+                    b.Property<Guid?>("PositionId")
                         .HasColumnType("uuid");
 
                     b.Property<int?>("RecruiterId")
@@ -63,6 +63,9 @@ namespace ApplyBuddy.Persistence.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PositionId")
+                        .IsUnique();
 
                     b.HasIndex("RecruiterId");
 
@@ -214,6 +217,10 @@ namespace ApplyBuddy.Persistence.Migrations
 
             modelBuilder.Entity("ApplyBuddy.Domain.Aggregates.JobApplication.JobApplication", b =>
                 {
+                    b.HasOne("ApplyBuddy.Domain.Aggregates.Position.Position", null)
+                        .WithOne()
+                        .HasForeignKey("ApplyBuddy.Domain.Aggregates.JobApplication.JobApplication", "PositionId");
+
                     b.HasOne("ApplyBuddy.Domain.Aggregates.JobApplication.Recruiter", "Recruiter")
                         .WithMany()
                         .HasForeignKey("RecruiterId");

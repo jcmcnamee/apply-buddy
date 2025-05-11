@@ -31,7 +31,6 @@
 
   <ItemGroup>
     <Folder Include="Contracts\ApplicationServices\" />
-    <Folder Include="Extensions\" />
     <Folder Include="Services\" />
     <Folder Include="Utilities\" />
   </ItemGroup>

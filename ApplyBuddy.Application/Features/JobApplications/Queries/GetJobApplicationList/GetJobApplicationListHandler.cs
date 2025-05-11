@@ -17,7 +17,8 @@ public class GetJobApplicationListHandler : IRequestHandler<GetJobApplicationLis
 
     public async Task<List<JobApplicationListVm>> Handle(GetJobApplicationListQuery request, CancellationToken cancellationToken)
     {
-        var allApplications = (await _applicationRepository.ListAllAsync()).OrderBy(a => a.AppliedDate);
-        return _mapper.Map<List<JobApplicationListVm>>(allApplications);
+        var allApplications = (await _applicationRepository.ListAllAsync()).OrderBy(a => a.CreatedDate);
+        allApplications.ToListVm();
+        return allApplications;
     }
 }

@@ -1,4 +1,5 @@
-﻿using ApplyBuddy.Application.Features.JobApplications.Queries.GetJobApplication;
+﻿using ApplyBuddy.Application.Features.JobApplications.Commands.Create;
+using ApplyBuddy.Application.Features.JobApplications.Queries.GetJobApplication;
 using ApplyBuddy.Application.Features.JobApplications.Queries.GetJobApplicationList;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +17,7 @@ public class JobApplicationController : ControllerBase
         _mediator = mediator;
     }
 
-    #region GET RESOURCES
+    #region QUERIES
 
     [HttpGet("all", Name = "GetAllApplications")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -41,6 +42,21 @@ public class JobApplicationController : ControllerBase
         }
 
         return Ok(application);
+    }
+
+    #endregion
+
+    #region COMMANDS
+
+    [HttpPost(Name = "CreateJobApplication")]
+    public async Task<ActionResult<CreateJobApplicationResponse>> Create([FromBody] CreateJobApplicationCommand createJobApplicationCommand)
+    {
+        var response = await _mediator.Send(createJobApplicationCommand);
+
+        return CreatedAtRoute(
+            "GetApplicationById",
+            new { id = response.JobApplication.Id},
+            response);
     }
 
     #endregion

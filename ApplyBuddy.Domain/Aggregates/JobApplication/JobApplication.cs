@@ -1,26 +1,30 @@
 ﻿using ApplyBuddy.Domain.Common;
+using ApplyBuddy.Domain.Enums;
 using ApplyBuddy.Domain.Interfaces;
+using ApplyBuddy.Domain.ValueObjects;
 
 namespace ApplyBuddy.Domain.Aggregates.JobApplication;
-public class JobApplication : AuditableEntity, IAggregateRoot
+public class JobApplication : AuditableEntity<Guid>, IAggregateRoot
 {
-    public Guid Id { get; init; }
-    public string Name { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
-    public Recruiter? Recruiter { get; set; }
-    public ApplicationStatus Status { get; private set; } = ApplicationStatus.NotApplied;
-    public DateTime? AppliedDate { get; private set; }
+    public string Name { get; private set; } = string.Empty;
+    public string Description { get; private set; } = string.Empty;
+    public SubmissionDetails SubmissionDetails { get; private set; }
     public List<UserTask> Tasks { get; private set; } = new List<UserTask>();
-    public required Guid PositionId { get; set; }
+    
+    // FK:
+    public Guid? ListingId { get; init; }
 
-    public int? DaysSinceApplication()
+    public JobApplication()
     {
-        return AppliedDate.HasValue ? (int)(DateTime.UtcNow - AppliedDate.Value).TotalDays : null;
+        Id = Guid.NewGuid();
+        SubmissionDetails = new NotSubmittedDetails(Id);
     }
 
-    public void Apply(DateTime appliedDate)
+    public bool HasBeenSubmitted => SubmissionDetails is SubmittedDetails;
+
+    public void Apply(DateTime appliedDate, ApplicationChannel? channel)
     {
-        AppliedDate = appliedDate;
-        Status = ApplicationStatus.InProgress;
+        var details = new SubmittedDetails(appliedDate, channel, Id);
+        SubmissionDetails = details;
     }
 }

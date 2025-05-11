@@ -1,16 +1,15 @@
-﻿using ApplyBuddy.Domain.Aggregates.Position;
+﻿using ApplyBuddy.Domain.Aggregates.Listing;
+using ApplyBuddy.Domain.Common;
+using ApplyBuddy.Domain.Enums;
 
 namespace ApplyBuddy.Application.Features.DTOs;
-public class PositionDto
+public record PositionDto
 {
-    public Guid Id { get; init; }
-    public string Name { get; set; } = string.Empty;
-    public string ShortDescription { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
-    public DateTime ListedDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public string Company { get; set; } = string.Empty;
-    public Salary Salary { get; set; }
-    public EmploymentType EmploymentType { get; set; }
-    public PositionLevel Level { get; set; }
+    public string Name { get; init; } = string.Empty;
+    public string? Description { get; init; } = string.Empty;
+    public string? Company { get; init; } = string.Empty;
+    public string? Location { get; init; } = string.Empty;
+    public SalaryVm? Salary { get; init; }
+    public string? EmploymentType { get; init; } = string.Empty;
+    public string? Level { get; init; } = string.Empty;
 }

@@ -2,9 +2,8 @@
 
 namespace ApplyBuddy.Domain.Common;
 
-public class BaseTask : AuditableEntity
+public class BaseTask : AuditableEntity<Guid>
 {
-    public Guid Id { get; init; }
     public string ShortDescription { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public TaskState State { get; private set; }

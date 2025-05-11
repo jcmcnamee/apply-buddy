@@ -1,6 +1,7 @@
 ﻿using ApplyBuddy.Domain.Aggregates.JobApplication;
-using ApplyBuddy.Domain.Aggregates.Position;
+using ApplyBuddy.Domain.Aggregates.Listing;
 using ApplyBuddy.Domain.Common;
+using ApplyBuddy.Domain.ValueObjects;
 using ApplyBuddy.Persistence.Utilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -15,8 +16,11 @@ public class ApplyBuddyDbContext : DbContext
     }
 
     public DbSet<JobApplication> Applications => Set<JobApplication>();
-    public DbSet<Position> Positions => Set<Position>();
-
+    public DbSet<SubmissionDetails> SubmissionDetails => Set<SubmissionDetails>();
+    public DbSet<Listing> Listings => Set<Listing>();
+    public DbSet<Company> Companies => Set<Company>();
+    public DbSet<SubmissionDetails> Submissions => Set<SubmissionDetails>();
+ 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplyBuddyDbContext).Assembly);
@@ -29,13 +33,14 @@ public class ApplyBuddyDbContext : DbContext
     {
         foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
         {
+            // TODO: Include user context
             switch (entry.State)
             {
                 case EntityState.Added:
-                    entry.Entity.CreatedDate = DateTime.Now;
+                    entry.Entity.CreatedDate = DateTime.UtcNow;
                     break;
                 case EntityState.Modified:
-                    entry.Entity.LastModifiedDate = DateTime.Now;
+                    entry.Entity.LastModifiedDate = DateTime.UtcNow;
                     break;
             }
         }

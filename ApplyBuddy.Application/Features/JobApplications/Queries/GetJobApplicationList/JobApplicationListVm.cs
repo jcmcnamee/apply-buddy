@@ -1,14 +1,18 @@
 ﻿using ApplyBuddy.Domain.Aggregates.JobApplication;
+using ApplyBuddy.Domain.Enums;
 
 namespace ApplyBuddy.Application.Features.JobApplications.Queries.GetJobApplicationList;
 
-public class JobApplicationListVm
+public record JobApplicationListVm
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
-    public ApplicationStatus Status { get; set; }
-    public DateTime? AppliedDate { get; set; }
-    public string Position { get; set; } = string.Empty;
-
+    public Guid Id { get; init; }
+    public string Name { get; init; } = string.Empty;
+    public string Description { get; init; } = string.Empty;
+    public string Status { get; init; } = string.Empty;
+    public DateTime? AppliedDate { get; init; }
+    public DateTime? CreatedDate { get; init; }
+    public DateTime? ListingCloseDate { get; init; }
+    public string Position { get; init; } = string.Empty;
+    public string PositionLevel { get; init; } = string.Empty;
+    public int TaskCount { get; init; }
 }

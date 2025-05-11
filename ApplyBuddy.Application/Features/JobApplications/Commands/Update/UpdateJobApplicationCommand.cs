@@ -1,10 +1,12 @@
 ﻿using ApplyBuddy.Domain.Aggregates.JobApplication;
+using ApplyBuddy.Domain.Aggregates.Listing;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ApplyBuddy.Domain.Enums;
 
 namespace ApplyBuddy.Application.Features.JobApplications.Commands.Update;
 public class UpdateJobApplicationCommand : IRequest

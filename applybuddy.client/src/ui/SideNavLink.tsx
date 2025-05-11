@@ -11,7 +11,7 @@ function SideNavLink({ to, logo, children }: SideNavLinkProps) {
   return (
     <NavLink
       to={to}
-      className={"flex flex-row gap-1.5 btn-effects py-2 px-4 items-center "}
+      className={"flex flex-row gap-1.5 btn-effects py-2 px-4 items-center"}
     >
       {logo}
       <span>{children}</span>

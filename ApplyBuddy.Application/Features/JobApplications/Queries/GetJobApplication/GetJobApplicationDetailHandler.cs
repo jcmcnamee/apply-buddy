@@ -1,7 +1,9 @@
 ﻿using ApplyBuddy.Application.Contracts.Persistence;
+using ApplyBuddy.Application.Exceptions;
+using ApplyBuddy.Application.Extensions;
 using ApplyBuddy.Application.Features.DTOs;
 using ApplyBuddy.Domain.Aggregates.JobApplication;
-using ApplyBuddy.Domain.Aggregates.Position;
+using ApplyBuddy.Domain.Aggregates.Listing;
 using AutoMapper;
 using MediatR;
 
@@ -10,13 +12,13 @@ public class GetJobApplicationDetailHandler : IRequestHandler<GetJobApplicationD
 {
     private readonly IMapper _mapper;
     private readonly IAsyncRepository<JobApplication> _applicationRepository;
-    private readonly IAsyncRepository<Position> _positionRepository;
+    private readonly IAsyncRepository<Listing> _listingRepository;
 
-    public GetJobApplicationDetailHandler(IMapper mapper, IAsyncRepository<JobApplication> applicationRepository, IAsyncRepository<Position> positionRepository)
+    public GetJobApplicationDetailHandler(IMapper mapper, IAsyncRepository<JobApplication> applicationRepository, IAsyncRepository<Listing> positionRepository)
     {
         _mapper = mapper;
         _applicationRepository = applicationRepository;
-        _positionRepository = positionRepository;
+        _listingRepository = positionRepository;
     }
     public async Task<JobApplicationDetailVm> Handle(GetJobApplicationDetailQuery request, CancellationToken cancellationToken)
     {
@@ -24,14 +26,14 @@ public class GetJobApplicationDetailHandler : IRequestHandler<GetJobApplicationD
 
         if(application == null)
         {
-            // TODO: Implement Not Found Exception
+            throw new NotFoundException(nameof(JobApplication), request.Id);
         }
-
-        var applicationVm = _mapper.Map<JobApplicationDetailVm>(application);
-
-        var position = await _positionRepository.GetByIdAsync(application.PositionId);
-        applicationVm.Position = _mapper.Map<PositionDto>(position);
-
+        
+        var listing = await _listingRepository.GetByIdAsync(application.ListingId);
+        var listingSummary = listing.ToDto();
+        
+        var applicationVm = application.ToJobApplicationDetailVm(listingSummary);
+        
         return applicationVm;
     }
 }

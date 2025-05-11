@@ -1,5 +1,5 @@
 ﻿using ApplyBuddy.Domain.Aggregates.JobApplication;
-using ApplyBuddy.Domain.Aggregates.Position;
+using ApplyBuddy.Domain.Aggregates.Listing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,16 +8,12 @@ public class JobApplicationConfiguration : IEntityTypeConfiguration<JobApplicati
 {
     public void Configure(EntityTypeBuilder<JobApplication> builder)
     {
+        // Prperties
         builder.Property(j => j.Name)
             .IsRequired()
             .HasMaxLength(50);
-
-        builder.Property(j => j.AppliedDate)
-            .HasConversion(
-                d => d.Value.ToUniversalTime(),
-                d => d.ToUniversalTime()
-                );
-
+        
+        // Conversions
         builder.Property(j => j.CreatedDate)
             .HasConversion(
                 d => d.ToUniversalTime(),
@@ -30,10 +26,14 @@ public class JobApplicationConfiguration : IEntityTypeConfiguration<JobApplicati
                 d => d.ToUniversalTime()
                 );
 
-        builder.HasOne<Position>()
+        // Navigations and relations
+        builder.HasOne<Listing>()
             .WithOne()
-            .HasForeignKey<JobApplication>(j => j.PositionId)
+            .HasForeignKey<JobApplication>(ja => ja.ListingId);
+        
+        builder.HasOne(ja => ja.SubmissionDetails)
+            .WithOne()
+            .HasForeignKey<SubmissionDetails>(sd => sd.ApplicationId)
             .IsRequired();
-
     }
 }

@@ -1,15 +1,14 @@
 ﻿using ApplyBuddy.Application.Features.DTOs;
 using ApplyBuddy.Domain.Aggregates.JobApplication;
+using ApplyBuddy.Domain.Aggregates.Listing;
 
 namespace ApplyBuddy.Application.Features.JobApplications.Queries.GetJobApplication;
-public class JobApplicationDetailVm
+public record JobApplicationDetailVm
 {
     public Guid Id { get; init; }
-    public string Name { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
-    public Recruiter? Recruiter { get; set; }
-    public ApplicationStatus Status { get; set; }
-    public DateTime? AppliedDate { get; set; }
-    public List<TaskListDto> Tasks { get; set; } = new();
-    public PositionDto Position { get; set; } = new();
+    public string Name { get; init; } = string.Empty;
+    public string Description { get; init; } = string.Empty;
+    public required SubmissionDetails SubmissionDetails { get; init; }
+    public ListingDto Listing { get; init; } = new();
+    public List<TaskListDto> Tasks { get; init; } = new();
 }

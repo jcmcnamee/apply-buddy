@@ -1,5 +1,5 @@
 ﻿using ApplyBuddy.Application.Contracts.Persistence;
-using ApplyBuddy.Domain.Aggregates.JobApplication;
+using ApplyBuddy.Domain.Aggregates.Listing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
