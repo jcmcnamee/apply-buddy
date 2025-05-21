@@ -1,5 +1,4 @@
-﻿using ApplyBuddy.Server.Model.Listings;
-using ApplyBuddy.Server.Model.ValueObjects;
+﻿using ApplyBuddy.Server.Domain.Listings;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ApplyBuddy.Server.Infrastructure.Configurations;

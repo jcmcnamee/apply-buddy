@@ -1,8 +1,18 @@
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization.Metadata;
+using ApplyBuddy.Server.Features.Common.Contracts;
+using ApplyBuddy.Server.Features.Documents.Services;
 using ApplyBuddy.Server.Infrastructure;
+using ApplyBuddy.Server.Infrastructure.Integrations;
 using FluentValidation;
+using Serilog;
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.Console()
+    .WriteTo.File("logs/applybuddylog.txt")
+    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +32,9 @@ builder.Services.AddPersistenceServices(builder.Configuration);
 var assembly = typeof(Program).Assembly;
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(assembly));
 builder.Services.AddValidatorsFromAssembly(assembly);
+builder.Services.AddScoped<IChatService, OpenAIChatService>();
+builder.Services.Configure<OpenAISettings>(builder.Configuration.GetSection("OpenAI"));
+builder.Services.AddScoped<ICvParser, CvParser>();
 
 var app = builder.Build();
 

@@ -5,9 +5,9 @@ namespace ApplyBuddy.Server.Features.JobApplications;
 
 public static class CreateChannel
 {
-    public class Command : IRequest<int>
+    public class CreateChannelCommand : IRequest<int>
     {
         string Name { get; init; } = string.Empty;
-        ApplicationChannelType Type { get; init; }
+
     }
 }

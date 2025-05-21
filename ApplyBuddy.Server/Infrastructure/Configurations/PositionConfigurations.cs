@@ -1,4 +1,4 @@
-﻿using ApplyBuddy.Server.Model.Listings;
+﻿using ApplyBuddy.Server.Domain.Listings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

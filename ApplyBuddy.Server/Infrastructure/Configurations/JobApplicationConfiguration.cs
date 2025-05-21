@@ -1,5 +1,5 @@
-﻿using ApplyBuddy.Server.Model.JobApplication;
-using ApplyBuddy.Server.Model.Listings;
+﻿using ApplyBuddy.Server.Domain.JobApplication;
+using ApplyBuddy.Server.Domain.Listings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,7 +8,7 @@ public class JobApplicationConfiguration : IEntityTypeConfiguration<JobApplicati
 {
     public void Configure(EntityTypeBuilder<JobApplication> builder)
     {
-        // Prperties
+        // Properties
         builder.Property(ja => ja.Name)
             .IsRequired()
             .HasMaxLength(50);
@@ -37,9 +37,5 @@ public class JobApplicationConfiguration : IEntityTypeConfiguration<JobApplicati
             .WithOne()
             .HasForeignKey<JobApplication>(ja => ja.ListingId);
         
-        builder.HasOne(ja => ja.ApplicationDetails)
-            .WithOne()
-            .HasForeignKey<ApplicationDetails>(sd => sd.ApplicationId)
-            .IsRequired();
     }
 }

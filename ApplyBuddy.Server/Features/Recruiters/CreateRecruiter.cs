@@ -1,6 +1,8 @@
-﻿using ApplyBuddy.Server.Enums;
-using ApplyBuddy.Server.Model.Listings;
-using ApplyBuddy.Server.Model.ValueObjects;
+﻿using ApplyBuddy.Server.Domain.Companies;
+using ApplyBuddy.Server.Domain.Listings;
+using ApplyBuddy.Server.Domain.Recruiters;
+using ApplyBuddy.Server.Domain.ValueObjects;
+using ApplyBuddy.Server.Enums;
 using FluentValidation;
 using MediatR;
 
@@ -8,7 +10,7 @@ namespace ApplyBuddy.Server.Features.Recruiters;
 
 public static class CreateRecruiter
 {
-    public record Command : IRequest
+    public record CreateRecruiterCommand : IRequest
     {
         public PersonDetails? Details { get; init; }
         public RecruiterType Type { get; init; }

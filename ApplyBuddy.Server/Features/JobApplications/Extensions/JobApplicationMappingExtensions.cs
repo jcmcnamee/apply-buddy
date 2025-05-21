@@ -1,15 +1,15 @@
-﻿using ApplyBuddy.Server.Model.JobApplication;
+﻿using ApplyBuddy.Server.Domain.JobApplication;
 
 namespace ApplyBuddy.Server.Features.JobApplications.Extensions;
 
 public static class JobApplicationMappingExtensions
 {
-    public static JobApplication ToDomainModel(this CreateJobApplication.Command command)
+    public static JobApplication ToDomainModel(this CreateJobApplication.CreateJobApplicationCommand createJobApplicationCommand)
     {
         return JobApplication.Create(
-            command.Name,
-            command.Notes,
-            command.ListingId
+            createJobApplicationCommand.Name,
+            createJobApplicationCommand.Notes,
+            createJobApplicationCommand.ListingId
             );
     }
 }

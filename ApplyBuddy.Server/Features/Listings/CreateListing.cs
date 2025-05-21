@@ -1,8 +1,8 @@
-﻿using ApplyBuddy.Server.Enums;
+﻿using ApplyBuddy.Server.Domain.Listings;
+using ApplyBuddy.Server.Domain.ValueObjects;
+using ApplyBuddy.Server.Enums;
 using ApplyBuddy.Server.Features.Recruiters;
 using ApplyBuddy.Server.Infrastructure;
-using ApplyBuddy.Server.Model.Listings;
-using ApplyBuddy.Server.Model.ValueObjects;
 using FluentValidation;
 using MediatR;
 
@@ -10,7 +10,7 @@ namespace ApplyBuddy.Server.Features.Listings;
 
 public static class CreateListing
 {
-    public class Command : IRequest<Guid>
+    public class CreateListingCommand : IRequest<Guid>
     {
         public required Position Position { get; init; }
         public Channel? DiscoverySource { get; init; }
@@ -18,11 +18,11 @@ public static class CreateListing
         public DateTime? ListedDate { get; init; }
         public DateTime? ClosingDate { get; init; }
 
-        public CreateRecruiter.Command? Recruiter { get; init; }
+        public CreateRecruiter.CreateRecruiterCommand? Recruiter { get; init; }
         public int? RecruiterId { get; init; }
     }
 
-    public class Validator : AbstractValidator<Command>
+    public class Validator : AbstractValidator<CreateListingCommand>
     {
         public Validator()
         {
@@ -30,20 +30,21 @@ public static class CreateListing
         }
     }
 
-    internal sealed class Handler : IRequestHandler<Command, Guid>
+    internal sealed class Handler : IRequestHandler<CreateListingCommand, Guid>
     {
         private readonly ApplyBuddyDbContext _dbContext;
-        private readonly IValidator<Command> _validator;
+        private readonly IValidator<CreateListingCommand> _validator;
 
-        public Handler(ApplyBuddyDbContext dbContext, IValidator<Command> validator)
+        public Handler(ApplyBuddyDbContext dbContext, IValidator<CreateListingCommand> validator)
         {
             _dbContext = dbContext;
             _validator = validator;
         }
 
-        public Task<Guid> Handle(Command request, CancellationToken cancellationToken)
+        public Task<Guid> Handle(CreateListingCommand request, CancellationToken cancellationToken)
         {
-            
+            // TODO: Implement
+            throw new NotImplementedException();
         }
     }
 }

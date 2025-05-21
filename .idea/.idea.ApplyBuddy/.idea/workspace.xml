@@ -10,7 +10,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="891ef3a9-a43a-4ab6-9f3a-8467bc66b864" name="Changes" comment="" />
+    <list default="true" id="891ef3a9-a43a-4ab6-9f3a-8467bc66b864" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/Documents/CV.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/Documents/DocumentRecord.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/Documents/DocumentType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/JobApplication/JobApplication.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/AI/EvaluateResume.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Common/BaseResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Common/Contracts/IChatService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Common/LinkDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Documents/CreateDocument.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Documents/EvaluateResume.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Documents/Services/ChatRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Documents/Services/CvParser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Documents/Services/ICvParser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Documents/Services/OpenAIChatService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/JobApplications/AwaitingActionFrom.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Configurations/ApplicationStateConfigurations.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Integrations/OpenAISettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ApplyBuddy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApplyBuddy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/ApplyBuddy.Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/ApplyBuddy.Server.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Enums/ApplicationState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Features/JobApplications/CreateApplicationDetails.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Features/JobApplications/CreateChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/JobApplications/CreateChannel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Features/JobApplications/CreateJobApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/JobApplications/CreateJobApplication.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Features/JobApplications/Extensions/ApplicationStatusExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Features/JobApplications/Extensions/JobApplicationMappingExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/JobApplications/Extensions/JobApplicationMappingExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Listings/CreateListing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Listings/CreateListing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Listings/Extensions/ListingMappingExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Listings/Extensions/ListingMappingExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Recruiters/CreateRecruiter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Recruiters/CreateRecruiter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Recruiters/RecruiterMappingExtensions/RecruiterMappingExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Features/Recruiters/RecruiterMappingExtensions/RecruiterMappingExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/ApplyBuddyDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/ApplyBuddyDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Configurations/ApplicationDetailsConfigurations.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Configurations/ChannelConfigurations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Configurations/ChannelConfigurations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Configurations/JobApplicationConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Configurations/JobApplicationConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Configurations/ListingConfigurations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Configurations/ListingConfigurations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Configurations/PositionConfigurations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Configurations/PositionConfigurations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Configurations/RecruiterConfigurations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Infrastructure/Configurations/RecruiterConfigurations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/Common/AuditableEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/Common/AuditableEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/Common/BaseEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/Common/BaseEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/Common/BaseTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/Common/BaseTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/Common/ValueObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/Common/ValueObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/Companies/Company.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/Companies/Company.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/JobApplication/ApplicationDetails.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/JobApplication/ApplicationState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/JobApplication/JobApplication.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/JobApplication/UserTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/JobApplication/UserTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/Listings/Listing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/Listings/Listing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/Listings/Position.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/Listings/Position.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/Listings/Salary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/Listings/Salary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/Recruiters/Recruiter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/Recruiters/Recruiter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/ValueObjects/Channel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/ValueObjects/Channel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/ValueObjects/PersonDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/ValueObjects/PersonDetails.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Model/ValueObjects/PhoneNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Domain/ValueObjects/PhoneNumber.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.Server/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.Server/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyBuddy.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyBuddy.sln" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,10 +79,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jcmcnamee&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jcmcnamee/apply-buddy.git&quot;,
+    &quot;accountId&quot;: &quot;cf3d0e2b-8957-4870-99a1-2e72116a5eb0&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
@@ -46,11 +112,19 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fcb6ce26455bd49b775f33670eef17de99ab7baa4be9e651f819532bc9c5e/ChangeTracker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ApplyBuddy.Server/Features/JobApplications/CreateJobApplication.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2x5RFbN3Uq1hnsQ0vQRPHX5dz6V" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,8 +132,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.ApplyBuddy.Server: IIS Express.executor": "Debug",
+    ".NET Launch Settings Profile.ApplyBuddy.Server: https.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
@@ -67,7 +143,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
+    "settings.editor.selected.configurable": "editor.preferences.inline.completion",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -111,7 +187,7 @@
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ApplyBuddy.Server/ApplyBuddy.Server.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
       <option name="LAUNCH_PROFILE_NAME" value="https" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="1" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
@@ -122,13 +198,19 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="applybuddy.client: start" type="js.build_tools.npm" nameIsGenerated="true">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/applybuddy.client/package.json" />
       <command value="start" />
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.ApplyBuddy.Server: http" />
+      <item itemvalue=".NET Launch Settings Profile.ApplyBuddy.Server: https" />
+      <item itemvalue=".NET Launch Settings Profile.ApplyBuddy.Server: IIS Express" />
+      <item itemvalue="npm.start" />
+    </list>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -147,12 +229,20 @@
       <workItem from="1747557010243" duration="2757000" />
       <workItem from="1747561388970" duration="20283000" />
       <workItem from="1747644107360" duration="1734000" />
+      <workItem from="1747646110277" duration="21579000" />
+      <workItem from="1747728217596" duration="7884000" />
+      <workItem from="1747742000380" duration="1686000" />
+      <workItem from="1747745145140" duration="53000" />
+      <workItem from="1747745227031" duration="1837000" />
+      <workItem from="1747760132228" duration="12389000" />
+      <workItem from="1747809890744" duration="15679000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -185,13 +275,13 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/ApplyBuddy.Server/Features/Recruiters/RecruiterMappingExtensions/RecruiterMappingExtensions.cs</url>
-          <line>9</line>
+          <line>10</line>
           <properties documentPath="C:\Users\jcmcn\repo\ApplyBuddy\ApplyBuddy.Server\Features\Recruiters\RecruiterMappingExtensions\RecruiterMappingExtensions.cs" containingFunctionPresentation="Method 'ToDomainModel'">
             <startOffsets>
-              <option value="286" />
+              <option value="362" />
             </startOffsets>
             <endOffsets>
-              <option value="287" />
+              <option value="363" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />

@@ -1,7 +1,11 @@
-﻿using ApplyBuddy.Server.Model.Common;
-using ApplyBuddy.Server.Model.JobApplication;
-using ApplyBuddy.Server.Model.Listings;
-using ApplyBuddy.Server.Model.ValueObjects;
+﻿using System.Reflection.Metadata;
+using ApplyBuddy.Server.Domain.Common;
+using ApplyBuddy.Server.Domain.Companies;
+using ApplyBuddy.Server.Domain.Documents;
+using ApplyBuddy.Server.Domain.JobApplication;
+using ApplyBuddy.Server.Domain.Listings;
+using ApplyBuddy.Server.Domain.Recruiters;
+using ApplyBuddy.Server.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApplyBuddy.Server.Infrastructure;
@@ -20,8 +24,9 @@ public class ApplyBuddyDbContext : DbContext
     public DbSet<Listing> Listings => Set<Listing>();
     public DbSet<Company> Companies => Set<Company>();
     public DbSet<Recruiter> Recruiters => Set<Recruiter>();
-    // public DbSet<SubmissionDetails> Submissions => Set<SubmissionDetails>();
+
     public DbSet<Channel> Channels => Set<Channel>();
+    public DbSet<DocumentRecord> Documents => Set<DocumentRecord>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

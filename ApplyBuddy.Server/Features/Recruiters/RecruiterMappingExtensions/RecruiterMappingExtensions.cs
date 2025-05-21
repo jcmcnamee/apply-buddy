@@ -1,11 +1,12 @@
-﻿using ApplyBuddy.Server.Model.Listings;
+﻿using ApplyBuddy.Server.Domain.Recruiters;
 
 namespace ApplyBuddy.Server.Features.Recruiters.RecruiterMappingExtensions;
 
 public static class RecruiterMappingExtensions
 {
-    public static Recruiter ToDomainModel(this CreateRecruiter.Command command)
+    public static Recruiter ToDomainModel(this CreateRecruiter.CreateRecruiterCommand createRecruiterCommand)
     {
-        return new Recruiter
+        // TODO: Implement
+        throw new NotImplementedException();
     }
 }
